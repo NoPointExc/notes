@@ -45,5 +45,9 @@ git reset --hard # removes staged and working directory changes
 
 
 
+### rebase to master ###
+```$ git checkout master  ```  
+```$ git merge experiment```
 
-
+### delte a branch ###
+``` git branch -d <branch0-name> ```
