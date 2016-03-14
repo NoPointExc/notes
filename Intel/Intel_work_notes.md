@@ -37,45 +37,22 @@ cc not linked to gcc or gcc not installed.
 
 
 
-03/March 2016
-### reset local repo branch to be  just like remote repo HEAD
-
-``git fetch origin``  
-``git reset --hard origin/master``  
-if you want to save your current branch's state before doing this (just in case), you can do:  
-
-``git commit -a -m "Saving my work, just in case"  ``  
-`` git branch my-saved-work ``
-
-### discard local changes and update with remote 
-``git reset --hard origin/master``  
-``git pull origin master``
-
-### unable to correct problems you have held broken packages ###
-
-106
-down vote
-That particular error message may indicate that you have held packages, but it may also indicate a different problem.  
-
-You can get a list of actual held packages with:  
-
-`` dpkg --get-selections | grep hold``  
-
-If there are none, or none look related, then it's probably something else. Check carefully the output of the command you were trying when you got the error message, as there may be other clues in the full output from that command, aside from the error message.  
-
-Another method of troubleshooting may be to use aptitude rather than apt-get to try to install your package:  
-
-``sudo aptitude install <packagename>``  
-
-Aptitude will give up less easily, and will attempt to find solutions which may involve modifying other packages. It may give you more explanation of the problem and options for fixing it.  
-
-Occasionally aptitude will be too eager to remove or downgrade large numbers of packages to satisfy your request, in which case retrying with -f changes its priorities and helps it come up with solutions that involve removing/downgrading fewer packages even if it means not all changes you requested can go ahead:
-
-sudo aptitude -f install <packagename>
-
-ref:[http://askubuntu.com/questions/223237/unable-to-correct-problems-you-have-held-broken-packages](http://askubuntu.com/questions/223237/unable-to-correct-problems-you-have-held-broken-packages "ask-ubuntu")
+14/March 2016
+-----------------------
 
 ### krb5-user ###
 *Basic programs to authenticate using MIT Kerberos.*
 
 Kerberos is an authentication protocol using a combination of secret-key cryptography and trusted third parties to allow secure authentication to network services over untrusted networks. More information about the Kerberos protocol is available from MIT's Kerberos site. Designing an Authentication System is an accessible introduction to the principals of Kerberos' authentication scheme.
+
+### Repo vs Git###
+**repo is a tool to manage gits in one big project. repo is the 'git' for gits**
+
+Repo is a repository management tool that we built on top of Git. Repo unifies the many Git repositories when necessary, does the uploads to our revision control system, and automates parts of the Android development workflow. Repo is not meant to replace Git, only to make it easier to work with Git in the context of Android. The repo command is an executable Python script that you can put anywhere in your path. In working with the Android source files, you will use Repo for across-network operations. For example, with a single Repo command you can download files from multiple repositories into your local working directory.
+
+ref: [https://source.android.com/source/developing.html](https://source.android.com/source/developing.html)
+
+### Gerrit ###
+**web-based code review system**
+
+Gerrit is a web-based code review system for projects that use git. Gerrit encourages more centralized use of Git by allowing all authorized users to submit changes, which are automatically merged if they pass code review. In addition, Gerrit makes reviewing easier by displaying changes side by side in-browser and enabling inline comments.
