@@ -29,6 +29,19 @@ Occasionally aptitude will be too eager to remove or downgrade large numbers of 
 
 sudo aptitude -f install <packagename>
 
-ref:[http://askubuntu.com/questions/223237/unable-to-correct-problems-you-have-held-broken-packages](http://askubuntu.com/questions/223237/unable-to-correct-problems-you-have-held-broken-packages "ask-ubuntu")
+ref: [answer from ask ubuntu](http://askubuntu.com/questions/223237/unable-to-correct-problems-you-have-held-broken-packages)
 
+### Why is 1/1/1970 the “epoch time”? ###
 
+Early versions of unix measured system time in 1/60 s intervals. This meant that a 32-bit unsigned integer could only represent a span of time less than 829 days. For this reason, the time represented by the number 0 (called the epoch) had to be set in the very recent past. As this was in the early 1970s, the epoch was set to 1971-1-1.  
+
+Later, the system time was changed to increment every second, which increased the span of time that could be represented by a 32-bit unsigned integer to around 136 years. As it was no longer so important to squeeze every second out of the counter, the epoch was rounded down to the nearest decade, thus becoming 1970-1-1. One must assume that this was considered a bit neater than 1971-1-1.  
+
+Note that a 32-bit signed integer using 1970-1-1 as its epoch can represent dates up to 2038-1-19, on which date it will wrap around to 1901-12-13.  
+
+ref: [answer of commmunity wiki forom stackoverflow.com](http://stackoverflow.com/questions/1090869/why-is-1-1-1970-the-epoch-time)
+
+### check installed software ###
+dpkg --get-selections [name1] [name2] ...
+
+refer: [how to geek](http://www.howtogeek.com/howto/linux/show-the-list-of-installed-packages-on-ubuntu-or-debian/)

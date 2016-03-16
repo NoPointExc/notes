@@ -29,7 +29,7 @@ for the codes blow,
     	return i-start;
     }
 
-the src[] and dst[] in substr are pointers. so, when you call sizeof(src) inside the substr, the return value is 4(the size of a pointer).
+the ```src[]``` and ```dst[]``` in substr are pointers. so, when you call sizeof(src) inside the substr, the return value is 4(the size of a pointer).
 
 ### const pointer VS pointer to a const value ###
 
@@ -145,4 +145,5 @@ Check EVERY place in your program that uses pointers, subscripts an array, or us
 
 Remember that printf statements for debugging purposes should have a new-line character (\n) at the end of their format control strings to force flushing of the print buffer.
 
- *From:[http://web.mit.edu/10.001/Web/Tips/tips_on_segmentation.html](http://web.mit.edu/10.001/Web/Tips/tips_on_segmentation.html "MIT.edu")*
+ref : [Troubleshooting Segmentation Violations/Faults](http://web.mit.edu/10.001/Web/Tips/tips_on_segmentation.html)
+
