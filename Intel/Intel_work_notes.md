@@ -95,8 +95,13 @@ ref: [wiki](https://en.wikipedia.org/wiki/Java_Native_Interface)
 
 ### g++ commend not found Error: 127 ###
 
-**libxml2.so.2**
+**libxml2.so.2** not installed or linked. Try    
+1)   if not installed , for 64 bits   
+```sudo apt-get install libxml2:i386 libstdc++6:i386```  
+2)   if not linked,  
+```sudo ln -s /usr/lib/i386-linux-gnu/libxml2.so.2.7.8 /usr/lib/i386-linux-gnu/libxml2.so.2```
 
+ref: [askubuntu](http://askubuntu.com/questions/373532/when-executing-acroreader-it-fails-with-error-while-loading-shared-libraries-l)
 
 
 
