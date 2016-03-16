@@ -61,3 +61,45 @@ Gerrit is a web-based code review system for projects that use git. Gerrit encou
 ### Test Patch ###
 476786/476789/476835 fetched and cherry-picked. Build failed in 1st time. 
 TODO: build success, download to 3gr.
+
+16/March 2016
+-----------------------
+
+### workstation dev environment ruined ###  
+when I try to setup download tool for sofia phone in linux. I apt-get failed to install a lib package. So I turn to aptitude for a quick solution. Aptitude promote me a solution and and I chose 'Y' without cofirmming. 5 mins later, I found aptitude alrady uninstalled everything. Then I try to resetart the computer, the workstation simply can't boot up.  
+So, I need to re-install the whole system.
+
+### VNC ###
+
+[VNC](https://www.realvnc.com/) allow you to connect to your remote ubuntu workstation/server.  
+download VNC for server and VNC viwer for client. 
+
+### Connect to Ubuntu via FTP ###
+**set up FTP in ubuntu**  
+``$ sudo apt-get install vsftpd``  
+``$ sudo service vsftpd restart``  
+for more info: [http://www.krizna.com/ubuntu/setup-ftp-server-on-ubuntu-14-04-vsftpd/](http://www.krizna.com/ubuntu/setup-ftp-server-on-ubuntu-14-04-vsftpd/)  
+
+**connect from windows**  
+install [FileZilla](https://filezilla-project.org/)  
+set port number ==21
+
+### TODO ###
+build up ubuntu download 
+
+### JNI ###
+Java Native Interface (JNI)  is a programming framework that enables Java code running in a Java Virtual Machine (JVM) to call and be called by[1] native applications (programs specific to a hardware and operating system platform) and libraries written in other languages such as C, C++ and assembly.  
+The JNI framework lets a native method use Java objects in the same way that Java code uses these objects. A native method can create Java objects and then inspect and use these objects to perform its tasks. A native method can also inspect and use objects created by Java application code.  
+ref: [wiki](https://en.wikipedia.org/wiki/Java_Native_Interface)  
+
+
+### g++ commend not found Error: 127 ###
+
+**libxml2.so.2**
+
+
+
+
+
+ 
+ 
