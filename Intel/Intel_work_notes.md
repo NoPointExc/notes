@@ -103,8 +103,32 @@ ref: [wiki](https://en.wikipedia.org/wiki/Java_Native_Interface)
 
 ref: [askubuntu](http://askubuntu.com/questions/373532/when-executing-acroreader-it-fails-with-error-while-loading-shared-libraries-l)
 
+### OC6 work-flow ###
+    enter_oc6 -i
+    module load opticm6
+    
+	#--------------------init -----------------
+    mkdir <workarea_dir>
+    cd <workarea_dir>
+    bee create -b sofia_3gr_maint -j16   --> Checkout on tip of the branch --> This is for LPOP Branch.
+     
+     
+    bee create -p SF_3GR_MAINT -v TAG -j16  --> Directly checkout on the give Tag.
+    e.g.: 
+    bee create -p SF_3GR_MAINT -v SF_3GR_MAINT_1605_5_0735 -j16
+    bee switch -p SF_3GR_MAINT -v TAG -j16  --> Directly checkout on the give Tag. This is same as bee create -p .. -v .. option.
+    e.g.:
+    bee switch -p SF_3GR_MAINT -v SF_3GR_MAINT_1605_5_0735 -j16
+	
+	#-----------------build -----------------
+    cd android
+    oc6env -v -t aosp_l 
+    source build/envsetup.sh   
+    lunch 
+    module load openjdk   
+    make -j16
 
-
+    
 
  
  

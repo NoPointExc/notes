@@ -45,3 +45,14 @@ ref: [answer of commmunity wiki forom stackoverflow.com](http://stackoverflow.co
 dpkg --get-selections [name1] [name2] ...
 
 refer: [how to geek](http://www.howtogeek.com/howto/linux/show-the-list-of-installed-packages-on-ubuntu-or-debian/)
+
+### rsync ###
+To sync files/folders from one machine to another.  
+To sync a folder:  
+Source Machine:  
+```rsync -avhP <Src folder> <username-to>@<address-to> ``` 
+
+Destionation Machine:  
+```rsync -avhP <username-from>@<address-from>:<remote path-from> <local path-to>```
+
+ref:[http://linux.die.net/man/1/rsync](http://linux.die.net/man/1/rsync)
