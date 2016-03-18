@@ -53,6 +53,6 @@ Source Machine:
 ```rsync -avhP <Src folder> <username-to>@<address-to> ``` 
 
 Destionation Machine:  
-```rsync -avhP <username-from>@<address-from>:<remote path-from> <local path-to>```
-
+```rsync -avhP <username-from>@<address-from>:<remote path-from> <local path-to>```  
+input password for remote device  
 ref:[http://linux.die.net/man/1/rsync](http://linux.die.net/man/1/rsync)
