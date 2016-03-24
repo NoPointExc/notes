@@ -74,3 +74,24 @@ last paramter excuted: ``` $? ```  0 means exit success. Other values indicate e
 	else
 	echo "I have no idea what $filename is"
 	fi
+
+###Difference between echo and @echo in unix shells###
+That's a Makefile-specific thing; it has nothing to do with shell scripts.
+
+Recipes that begin with @ do not echo the command. That is to say, with a Makefile
+
+	foo:
+    echo foo
+You get
+
+$ make foo        # <-- this is meant to be the command you enter in the shell
+echo foo
+foo
+Whereas with a Makefile
+
+	foo:
+    @echo foo
+it is
+
+	$ make foo
+	foo
