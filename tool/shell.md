@@ -55,4 +55,31 @@ Source Machine:
 Destionation Machine:  
 ```rsync -avhP <username-from>@<address-from>:<remote path-from> <local path-to>```  
 input password for remote device  
-ref:[http://linux.die.net/man/1/rsync](http://linux.die.net/man/1/rsync)
+ref:[http://linux.die.net/man/1/rsync](http://linux.die.net/man/1/rsync)  
+
+### Yocto Project SDK ###  
+- A cross-compile toolchain which is a combination of two sysroots.  
+
+- One for the target  
+	
+	- Contains headers and libraries for the target  
+	- NOTE: Consistent with the generated image from which it is derived  
+
+- One for the host  
+	- Contains host specific tools  
+	- NOTE: These tools ensure things are consistent and work as expected while building against the target sysroo  
+
+- An environment script to setup the necessary variables to
+make these work together
+
+
+### Using cd to go up multiple directory levels ###
+
+Navigate up the directory using ..n :  
+In the example below, ..4 is used to go up 4 directory level, ..3 to go up 3 directory level, ..2 to go up 2 directory level. 
+  
+Add the following alias to the .bash_profile and re-login.
+   
+    alias ..="cd .." 
+    alias ..2="cd ../.."
+    alias ..3="cd ../../.."
