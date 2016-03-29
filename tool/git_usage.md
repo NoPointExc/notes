@@ -51,3 +51,32 @@ git reset --hard # removes staged and working directory changes
 
 ### delte a branch ###
 ``` git branch -d <branch0-name> ```
+
+### patch-format ###  
+``` git format-patch <from> ```  
+format a pathch form <from> to HEAD  
+refer:[git-doc](https://git-scm.com/docs/git-format-patch)  
+
+### patch-apply ###
+
+The other big thing involved is git format-patch. This will create the patches to be emailed; they can then be sent using git send-email or directly. For example:
+
+# create a patch for each commit from origin's master to yours
+git format-patch origin/master..master
+
+# now send them... 
+# there are a zillion options here, and also some configuration; read the man page
+git send-email --to=maintainer@project.com --from=me@here.com ... *.patch
+git am will accept the patches created by format-patch, and apply them sequentially, for example:
+
+git am *.patch
+You'll have to figure out how to export the patches in mbox format from your mail client yourself, though I suppose you could also simply send them as attachments or transfer them directly.
+
+You can try this out for yourself entirely within one repository to see how it works. Create a set of patches as above, then check out the starting point, and use git am to apply the patches.
+
+*fix me*
+
+### show remote project ###  
+```git remote -v ```
+
+

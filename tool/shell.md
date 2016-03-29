@@ -78,7 +78,7 @@ make these work together
 Navigate up the directory using ..n :  
 In the example below, ..4 is used to go up 4 directory level, ..3 to go up 3 directory level, ..2 to go up 2 directory level. 
   
-Add the following alias to the .bash_profile and re-login.
+Add the following alias to the .bash_profile (or .bashrc) and re-login.
    
     alias ..="cd .." 
     alias ..2="cd ../.."
