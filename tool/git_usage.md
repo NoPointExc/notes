@@ -59,24 +59,42 @@ refer:[git-doc](https://git-scm.com/docs/git-format-patch)
 
 ### patch-apply ###
 
-The other big thing involved is git format-patch. This will create the patches to be emailed; they can then be sent using git send-email or directly. For example:
+The other big thing involved is git format-patch. This will create the patches to be emailed; they can then be sent using git send-email or directly. For example:  
+create a patch for each commit from origin's master to yours  
 
-# create a patch for each commit from origin's master to yours
-git format-patch origin/master..master
+```git format-patch origin/master..master```  
 
-# now send them... 
-# there are a zillion options here, and also some configuration; read the man page
-git send-email --to=maintainer@project.com --from=me@here.com ... *.patch
+now send them...   
+there are a zillion options here, and also some configuration; read the man page  
+
+```git send-email --to=maintainer@project.com --from=me@here.com ... *.patch ```  
+
 git am will accept the patches created by format-patch, and apply them sequentially, for example:
 
-git am *.patch
+```git am *.patch```
+
 You'll have to figure out how to export the patches in mbox format from your mail client yourself, though I suppose you could also simply send them as attachments or transfer them directly.
 
 You can try this out for yourself entirely within one repository to see how it works. Create a set of patches as above, then check out the starting point, and use git am to apply the patches.
 
-*fix me*
-
-### show remote project ###  
+### show remote project  ###
 ```git remote -v ```
 
 
+### resolve cherry-pick conflit  ###
+Before proceeding:  
+Install a proper mergetool. On Linux, I strongly suggest you to use meld:
+
+```sudo apt-get install meld```
+
+Configure your mergetool:
+
+```git config --global merge.tool meld```  
+
+Then, iterate in the following way:
+
+    git cherry-pick ....
+    git mergetool
+    git cherry-pick --continue
+
+refer: [stackoverflow, Claudio's answer](http://stackoverflow.com/questions/19830464/git-cherry-pick-and-conflicts)
